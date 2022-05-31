@@ -1,0 +1,19 @@
+{
+  "name": "p3_code_limol_kevin_19_05_22",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "sass": "sass --watch ./assets/sass/main.scss:./public/css/style.css"
+    },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limolkevin/openclassrooms_limol_kevin_projet3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limolkevin/openclassrooms_limol_kevin_projet3/issues"
+  },
+  "homepage": "https://github.com/limolkevin/openclassrooms_limol_kevin_projet3#readme"
+}
