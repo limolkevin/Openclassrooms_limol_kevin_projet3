@@ -121,14 +121,40 @@ table {
     border-radius: 10px;
     border: 1px solid black;
   }
+  body .photo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(242, 236, 236);
+  }
   body .photo p {
-    width: 100%;
-    height: 100px;
-    margin-bottom: 50px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius: 10%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 3px 5px grey;
   }
   body .photo p img {
     width: 100%;
-    height: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  body .photo p span {
+    padding: 10px;
+  }
+  body footer {
+    background-color: rgb(61, 61, 61);
+    color: white;
+  }
+  body footer h3 {
+    font-family: "Shrikhand";
+    margin: 10px 0 20px 10px;
+  }
+  body footer li {
+    margin: 10px 0 10px 10px;
   }
 }
 

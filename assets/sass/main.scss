@@ -94,15 +94,40 @@
 
 
         .photo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(242, 236, 236);
             p {
-                width: 100%;
-                height: 100px;
-                margin-bottom: 50px;
-
+                width: 90%;
+                margin-bottom: 10px;
+                border-radius: 10%;
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 3px 5px grey;
                 img {
                     width: 100%;
-                    height: 100%;
+                    height: 150px;
+                    object-fit: cover;
                 }
+               
+                span{
+                    padding: 10px;
+                }
+            }
+        }
+        footer{
+            background-color: rgb(61, 61, 61);
+            color: white;
+            h3{
+                font-family: 'Shrikhand';
+                margin: 10px 0 20px 10px ;
+            }
+            li{
+                margin: 10px 0 10px 10px ;
+
             }
         }
     }
