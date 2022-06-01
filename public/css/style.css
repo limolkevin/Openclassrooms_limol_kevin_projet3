@@ -1,41 +1,132 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Shrikhand&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Shrikhand&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 @media screen and (max-width: 768px) {
   body {
     font-family: "Roboto", sans-serif;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
   }
-  body .titre {
-    width: 70%;
-    display: flex;
-    justify-content: center;
-    font-weight: 900;
-  }
-
-  .logo {
+  body .logo {
+    margin-top: 15px;
     display: flex;
     justify-content: center;
     margin-bottom: 5px;
   }
-  .logo img {
+  body .logo img {
     width: 50%;
   }
-
-  .bouton {
+  body .bouton {
     border: solid grey 1px;
     box-shadow: 0px -2px grey;
     width: 100%;
     padding: 3%;
+    margin-top: 5px;
+    margin-bottom: 20px;
   }
-
-  .photo p {
+  body article {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  body article .titre {
+    width: 60%;
+    font-weight: 900;
+    margin-bottom: 10px;
+  }
+  body article p {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  body article p:nth-child(even) {
+    color: gray;
+  }
+  body article .explorer {
+    border-radius: 20px;
+    background: linear-gradient(#FF79DA, #9356DC);
+    border: 0;
+    padding: 8px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  body .liste h2 {
+    font-weight: bold;
+    font-size: large;
+  }
+  body .liste ul {
+    margin-top: 30px;
+  }
+  body .liste ul span {
+    background-color: #9356DC;
+    color: white;
+    margin-right: 10px;
+  }
+  body .liste ul li {
+    display: flex;
+    width: 90%;
+    margin-bottom: 15px;
+    padding: 3px;
+    border-radius: 10px;
+    border: 1px solid black;
+  }
+  body .photo p {
     width: 100%;
     height: 100px;
     margin-bottom: 50px;
   }
-  .photo p img {
+  body .photo p img {
     width: 100%;
     height: 100%;
   }
