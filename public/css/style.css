@@ -75,6 +75,9 @@ table {
     margin-top: 5px;
     margin-bottom: 20px;
   }
+  body .bouton .fa-location-dot {
+    margin-right: 10px;
+  }
   body article {
     display: flex;
     justify-content: center;
@@ -105,6 +108,7 @@ table {
   body .liste h2 {
     font-weight: bold;
     font-size: large;
+    margin-left: 15px;
   }
   body .liste ul {
     margin-top: 30px;
@@ -166,6 +170,19 @@ table {
     flex-direction: column;
     background-color: white;
     box-shadow: 0 3px 5px grey;
+    position: relative;
+  }
+  body .restaurants .photo p .new {
+    width: 60px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: #99E2D0;
+    color: #023f30;
+    font-weight: 500;
+    position: absolute;
+    top: 10px;
+    right: 10px;
   }
   body .restaurants .photo p .tout {
     width: 100%;
@@ -173,6 +190,20 @@ table {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+  body .restaurants .photo p .tout .heart .fa-solid {
+    display: none;
+  }
+  body .restaurants .photo p .tout .heart .fa-regular {
+    display: block;
+  }
+  body .restaurants .photo p .tout .heart:hover .fa-solid {
+    display: block;
+    color: #9356DC;
+    cursor: pointer;
+  }
+  body .restaurants .photo p .tout .heart:hover .fa-regular {
+    display: none;
   }
   body .restaurants .photo p img {
     width: 100%;
@@ -185,19 +216,50 @@ table {
   body .restaurants .photo p strong {
     font-weight: 900;
   }
-  body .restaurants .photo .fa-solid {
-    display: none;
-  }
-  body footer {
+
+  footer {
     background-color: rgb(61, 61, 61);
     color: white;
   }
-  body footer h3 {
+  footer h3 {
     font-family: "Shrikhand";
     margin: 10px 0 20px 10px;
   }
-  body footer li {
+  footer li {
     margin: 10px 0 10px 10px;
+  }
+
+  .menuLogo {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0 20px 0;
+  }
+  .menuLogo .fa-solid {
+    font-size: large;
+  }
+  .menuLogo img {
+    width: 60%;
+  }
+
+  main .back img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  main .carte h3 {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px 20px 10px;
+    font-family: "Shrikhand";
+  }
+  main .carte h3 span {
+    font-size: x-large;
+    font-weight: 500;
+  }
+  main .carte h3 .fa-regular {
+    font-size: x-large;
+    color: rgb(96, 96, 96);
   }
 }
 
