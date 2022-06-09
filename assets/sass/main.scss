@@ -137,7 +137,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                
+
                 p {
                     width: 90%;
                     margin-bottom: 10px;
@@ -231,7 +231,7 @@
         }
     }
 
-    //code menu1
+    //code menus
     .menuLogo {
         width: 80%;
         display: flex;
@@ -251,26 +251,85 @@
         .back {
             img {
                 width: 100%;
-                height: 200px;
+                height: 150px;
                 object-fit: cover;
             }
         }
 
         .carte {
+            border-radius: 15px;
+            border-top: 1px solid black;
+
             h3 {
                 display: flex;
                 justify-content: space-between;
-                padding: 20px 20px 20px 10px;
+                padding: 20px 20px 0 10px;
                 font-family: 'Shrikhand';
+
                 span {
-                    font-size: x-large;
+                    font-size: large;
                     font-weight: 500;
                 }
-                .fa-regular{
+
+                .fa-regular {
                     font-size: x-large;
                     color: rgb(96, 96, 96);
                 }
             }
+        }
+
+        .entree {
+            h4 {
+                padding-top: 10px;
+                margin-left: 15px;
+                width: 10%;
+                border-bottom: #99E2D0 solid 3px;
+            }
+
+            p {
+                margin: 10px 5px 15px 5px;
+                box-shadow: 1px 5px rgb(225, 224, 224);
+                border: 1px solid rgb(255, 249, 249);
+                border-radius: 10px;
+                padding: 8px;
+                font-size: x-small;
+
+                strong {
+                    font-weight: 600;
+                    font-size: small;
+                }
+
+                span {
+                    font-weight: 900;
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-top: -15px;
+                }
+            }
+
+
+        }
+
+        .plats {
+            @extend .entree;
+        }
+
+        .desserts {
+            @extend .entree;
+        }
+
+        .commande {
+            @extend .explorer;
+        }
+
+        .commande {
+            border-radius: 20px;
+            background: linear-gradient(#FF79DA, #9356DC);
+            border: 0;
+            padding: 10px;
+            color: white;
+            width: 60%;
+            margin: 15px 50px 50px 50px;
         }
     }
 
