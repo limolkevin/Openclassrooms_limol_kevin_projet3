@@ -96,7 +96,7 @@ table {
   body article p:nth-child(even) {
     color: gray;
   }
-  body article .explorer, body article main .commande, main body article .commande {
+  body article .explorer {
     border-radius: 20px;
     background: linear-gradient(#FF79DA, #9356DC);
     border: 0;
@@ -242,14 +242,39 @@ table {
     width: 60%;
   }
 
-  main .back img {
+  main .back1 {
+    background-image: url("../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    background-size: cover;
     width: 100%;
-    height: 150px;
+    height: 200px;
+    object-fit: cover;
+  }
+  main .back2 {
+    background-image: url("../../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  main .back3 {
+    background-image: url("../../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  main .back4 {
+    background-image: url("../../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 200px;
     object-fit: cover;
   }
   main .carte {
-    border-radius: 15px;
-    border-top: 1px solid black;
+    border-radius: 35px;
+    background-color: white;
+    margin-top: -35px;
+    z-index: 3;
   }
   main .carte h3 {
     display: flex;
@@ -265,31 +290,81 @@ table {
     font-size: x-large;
     color: rgb(96, 96, 96);
   }
-  main .entree h4, main .desserts h4, main .plats h4 {
+  main .carte .entree, main .carte .desserts, main .carte .plats {
+    animation-duration: 5s;
+    animation-name: vew;
+  }
+  @keyframes vew {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  main .carte .entree h4, main .carte .desserts h4, main .carte .plats h4 {
     padding-top: 10px;
     margin-left: 15px;
     width: 10%;
     border-bottom: #99E2D0 solid 3px;
   }
-  main .entree p, main .desserts p, main .plats p {
+  main .carte .entree p, main .carte .desserts p, main .carte .plats p {
     margin: 10px 5px 15px 5px;
     box-shadow: 1px 5px rgb(225, 224, 224);
     border: 1px solid rgb(255, 249, 249);
     border-radius: 10px;
     padding: 8px;
-    font-size: x-small;
+    font-size: small;
   }
-  main .entree p strong, main .desserts p strong, main .plats p strong {
+  main .carte .entree p.p1, main .carte .desserts p.p1, main .carte .plats p.p1 {
+    animation-delay: 2s;
+  }
+  main .carte .entree p.p2, main .carte .desserts p.p2, main .carte .plats p.p2 {
+    animation-delay: 4s;
+  }
+  main .carte .entree p.p3, main .carte .desserts p.p3, main .carte .plats p.p3 {
+    animation-delay: 6s;
+  }
+  main .carte .entree p.p4, main .carte .desserts p.p4, main .carte .plats p.p4 {
+    animation-delay: 8s;
+  }
+  main .carte .entree p strong, main .carte .desserts p strong, main .carte .plats p strong {
     font-weight: 600;
     font-size: small;
   }
-  main .entree p span, main .desserts p span, main .plats p span {
+  main .carte .entree p span, main .carte .desserts p span, main .carte .plats p span {
     font-weight: 900;
     display: flex;
     justify-content: flex-end;
     margin-top: -15px;
   }
-  main .commande {
+  main .carte .plats {
+    animation-duration: 3s;
+    animation-delay: 1s;
+    animation-name: vew;
+  }
+  @keyframes vew {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  main .carte .desserts {
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-name: vew;
+  }
+  @keyframes vew {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  main .carte .commande {
     border-radius: 20px;
     background: linear-gradient(#FF79DA, #9356DC);
     border: 0;
