@@ -682,7 +682,24 @@ table {
   }
   main .carte h3 .fa-regular {
     font-size: x-large;
-    color: rgb(96, 96, 96);
+  }
+  main .carte h3 .fa-regular:hover {
+    z-index: 5;
+    cursor: pointer;
+    animation-duration: 2s;
+    animation-name: remplis;
+  }
+  @keyframes remplis {
+    0% {
+      background-color: #9356DC;
+    }
+    50% {
+      background-color: #9356DC;
+    }
+    100% {
+      background-color: #9356DC;
+      transition: transform 1500ms ease-in-out;
+    }
   }
   main .carte .entree, main .carte .plats, main .carte .desserts {
     animation-duration: 4s;
@@ -775,7 +792,7 @@ table {
     border-radius: 0 15% 15% 0;
     height: 100%;
     z-index: 3;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-name: valid;
   }
   @keyframes valid {
@@ -783,12 +800,12 @@ table {
       margin-right: -100%;
     }
     70% {
-      transform: rotate(-70%);
+      transform: rotate(-0.7turn);
     }
     100% {
       margin-right: 0;
-      transform: rotate(-100%);
-      transition: transform 5000ms ease-in-out;
+      transform: rotate(-1turn);
+      transition: transform 1500ms ease-in-out;
     }
   }
   main .carte .entree p:hover .acc, main .carte .plats p:hover .acc, main .carte .desserts p:hover .acc {
