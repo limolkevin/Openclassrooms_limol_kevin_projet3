@@ -716,7 +716,7 @@ table {
     display: none;
   }
   main .carte .entree, main .carte .plats, main .carte .desserts {
-    animation-duration: 4s;
+    animation-duration: 5s;
     animation-name: vew;
   }
   @keyframes vew {
@@ -782,16 +782,16 @@ table {
     display: none;
   }
   main .carte .entree p:hover .choix, main .carte .plats p:hover .choix, main .carte .desserts p:hover .choix {
-    width: 100%;
     animation-duration: 3s;
     animation-name: retract;
   }
   @keyframes retract {
-    from {
+    0% {
       width: 100%;
     }
-    to {
-      width: 92%;
+    100% {
+      width: 90%;
+      transition: transform 1000ms ease-in-out;
     }
   }
   main .carte .entree p:hover .fond, main .carte .plats p:hover .fond, main .carte .desserts p:hover .fond {
@@ -811,7 +811,7 @@ table {
     border-radius: 0 15% 15% 0;
     height: 100%;
     z-index: 3;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-name: valid;
   }
   @keyframes valid {
@@ -846,9 +846,8 @@ table {
       transform: rotate(0.9turn);
     }
     100% {
-      margin-right: 0;
       transform: rotate(1turn);
-      transition: transform 500ms ease-in;
+      transition: transform 2500ms ease-in;
     }
   }
   main .carte .entree p:hover .fond .acc, main .carte .plats p:hover .fond .acc, main .carte .desserts p:hover .fond .acc {

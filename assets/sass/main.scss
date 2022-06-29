@@ -827,7 +827,7 @@
 
             .entree {
 
-                animation-duration: 4s;
+                animation-duration: 5s;
                 animation-name: vew;
 
                 @keyframes vew {
@@ -903,17 +903,18 @@
 
                     &:hover {
                         .choix {
-                            width: 100%;
                             animation-duration: 3s;
                             animation-name: retract;
+                            
 
                             @keyframes retract {
-                                from {
+                                0% {
                                     width: 100%;
                                 }
 
-                                to {
-                                    width: 92%;
+                                100% {
+                                    width: 90%;
+                                    transition: transform 1000ms ease-in-out;
                                 }
                             }
                         }
@@ -935,7 +936,7 @@
                                 border-radius: 0 15% 15% 0;
                                 height: 100%;
                                 z-index: 3;
-                                animation-duration: 1s;
+                                animation-duration: 2s;
                                 animation-name: valid;
 
                                 @keyframes valid {
@@ -980,9 +981,8 @@
                                     }
 
                                     100% {
-                                        margin-right: 0;
                                         transform: rotate(1turn);
-                                        transition: transform 500ms ease-in;
+                                        transition: transform 2500ms ease-in;
                                     }
                                 }
 
