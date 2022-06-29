@@ -247,7 +247,6 @@ table {
   body .restaurants .photo p strong {
     font-weight: 900;
   }
-
   footer {
     background-color: rgb(61, 61, 61);
     color: white;
@@ -263,7 +262,6 @@ table {
   footer a {
     text-decoration: none;
   }
-
   .menuLogo {
     width: 80%;
     display: flex;
@@ -276,7 +274,6 @@ table {
   .menuLogo img {
     width: 60%;
   }
-
   main .back1 {
     background-image: url("../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     background-size: cover;
@@ -496,6 +493,10 @@ table {
     margin-top: 10px;
     margin-bottom: 50px;
   }
+  body article .explorer:hover {
+    box-shadow: 0 6px 5px #FF79DA;
+    cursor: pointer;
+  }
   body .liste h2 {
     font-weight: bold;
     font-size: large;
@@ -518,18 +519,22 @@ table {
     box-shadow: 0 3px 8px rgb(199, 196, 196);
     background-color: rgb(242, 236, 236);
   }
+  body .liste ul li:hover {
+    cursor: pointer;
+  }
   body .liste ul li :hover .fa-solid {
     color: #9356DC;
   }
   body .liste ul li span {
     background-color: #9356DC;
     color: white;
-    margin-left: -18px;
+    margin-left: -25px;
     margin-right: 15px;
-    z-index: 5;
+    z-index: 3;
     border-radius: 50%;
     width: 15px;
-    padding: 5px;
+    padding: 4px;
+    font-size: large;
   }
   body .liste ul li .fa-solid {
     font-size: medium;
@@ -585,13 +590,20 @@ table {
   body .restaurants .photo p .tout .heart .fa-solid {
     display: none;
   }
-  body .restaurants .photo p .tout .heart .fa-regular {
-    display: block;
-  }
   body .restaurants .photo p .tout .heart:hover .fa-solid {
     display: block;
     color: #9356DC;
     cursor: pointer;
+    animation-duration: 5s;
+    animation-name: remplis;
+  }
+  @keyframes remplis {
+    from {
+      color: white;
+    }
+    to {
+      color: #9356DC;
+    }
   }
   body .restaurants .photo p .tout .heart:hover .fa-regular {
     display: none;
@@ -607,7 +619,6 @@ table {
   body .restaurants .photo p strong {
     font-weight: 900;
   }
-
   footer {
     background-color: rgb(61, 61, 61);
     color: white;
@@ -621,8 +632,8 @@ table {
   }
   footer a {
     text-decoration: none;
+    color: white;
   }
-
   .menuLogo {
     width: 80%;
     display: flex;
@@ -635,7 +646,6 @@ table {
   .menuLogo img {
     width: 60%;
   }
-
   main .back1 {
     background-image: url("../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     background-size: cover;
@@ -680,26 +690,30 @@ table {
     font-size: large;
     font-weight: 500;
   }
-  main .carte h3 .fa-regular {
+  main .carte h3 .heart .fa-solid {
+    display: none;
+  }
+  main .carte h3 .heart .fa-regular {
     font-size: x-large;
   }
-  main .carte h3 .fa-regular:hover {
-    z-index: 5;
+  main .carte h3 .heart:hover .fa-solid {
+    display: block;
+    font-size: x-large;
+    color: #9356DC;
     cursor: pointer;
-    animation-duration: 2s;
+    animation-duration: 5s;
     animation-name: remplis;
   }
   @keyframes remplis {
-    0% {
-      background-color: #9356DC;
+    from {
+      color: white;
     }
-    50% {
-      background-color: #9356DC;
+    to {
+      color: #9356DC;
     }
-    100% {
-      background-color: #9356DC;
-      transition: transform 1500ms ease-in-out;
-    }
+  }
+  main .carte h3 .heart:hover .fa-regular {
+    display: none;
   }
   main .carte .entree, main .carte .plats, main .carte .desserts {
     animation-duration: 4s;
@@ -730,9 +744,6 @@ table {
     flex-direction: row;
     justify-content: space-between;
     height: 50px;
-  }
-  main .carte .entree p:hover, main .carte .plats p:hover, main .carte .desserts p:hover {
-    background-color: #99E2D0;
   }
   main .carte .entree p .choix, main .carte .plats p .choix, main .carte .desserts p .choix {
     display: flex;
@@ -771,8 +782,8 @@ table {
     display: none;
   }
   main .carte .entree p:hover .choix, main .carte .plats p:hover .choix, main .carte .desserts p:hover .choix {
-    width: 88%;
-    animation-duration: 1s;
+    width: 100%;
+    animation-duration: 3s;
     animation-name: retract;
   }
   @keyframes retract {
@@ -780,10 +791,18 @@ table {
       width: 100%;
     }
     to {
-      width: 88%;
+      width: 92%;
     }
   }
-  main .carte .entree p:hover .fa-solid, main .carte .plats p:hover .fa-solid, main .carte .desserts p:hover .fa-solid {
+  main .carte .entree p:hover .fond, main .carte .plats p:hover .fond, main .carte .desserts p:hover .fond {
+    background-color: #99E2D0;
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 30% 30% 0;
+  }
+  main .carte .entree p:hover .fond .fa-solid, main .carte .plats p:hover .fond .fa-solid, main .carte .desserts p:hover .fond .fa-solid {
+    width: 10%;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -792,23 +811,47 @@ table {
     border-radius: 0 15% 15% 0;
     height: 100%;
     z-index: 3;
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-name: valid;
   }
   @keyframes valid {
     0% {
       margin-right: -100%;
     }
+    10% {
+      transform: rotate(0.1turn);
+    }
+    20% {
+      transform: rotate(0.2turn);
+    }
+    30% {
+      transform: rotate(0.3turn);
+    }
+    40% {
+      transform: rotate(0.4turn);
+    }
+    50% {
+      transform: rotate(0.5turn);
+    }
+    60% {
+      transform: rotate(0.6turn);
+    }
     70% {
-      transform: rotate(-0.7turn);
+      transform: rotate(0.7turn);
+    }
+    80% {
+      transform: rotate(0.8turn);
+    }
+    90% {
+      transform: rotate(0.9turn);
     }
     100% {
       margin-right: 0;
-      transform: rotate(-1turn);
-      transition: transform 1500ms ease-in-out;
+      transform: rotate(1turn);
+      transition: transform 500ms ease-in;
     }
   }
-  main .carte .entree p:hover .acc, main .carte .plats p:hover .acc, main .carte .desserts p:hover .acc {
+  main .carte .entree p:hover .fond .acc, main .carte .plats p:hover .fond .acc, main .carte .desserts p:hover .fond .acc {
     width: 90%;
     text-overflow: ellipsis;
     overflow: hidden;

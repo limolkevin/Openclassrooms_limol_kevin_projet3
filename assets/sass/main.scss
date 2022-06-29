@@ -548,6 +548,11 @@
                 color: white;
                 margin-top: 10px;
                 margin-bottom: 50px;
+
+                &:hover {
+                    box-shadow: 0 6px 5px #FF79DA;
+                    cursor: pointer;
+                }
             }
         }
 
@@ -576,19 +581,26 @@
                     box-shadow: 0 3px 8px rgb(199, 196, 196);
                     background-color: rgb(242, 236, 236);
 
+                    &:hover {
+                        cursor: pointer;
+                    }
+
                     :hover .fa-solid {
                         color: #9356DC;
+
                     }
 
                     span {
                         background-color: #9356DC;
                         color: white;
-                        margin-left: -18px;
+                        margin-left: -25px;
                         margin-right: 15px;
-                        z-index: 5;
+                        z-index: 3;
                         border-radius: 50%;
                         width: 15px;
-                        padding: 5px;
+                        padding: 4px;
+
+                        font-size: large;
                     }
 
                     .fa-solid {
@@ -654,23 +666,31 @@
                                 display: none;
                             }
 
-                            .fa-regular {
-                                display: block;
-                            }
-
                             &:hover {
                                 .fa-solid {
                                     display: block;
                                     color: #9356DC;
                                     cursor: pointer;
+                                    animation-duration: 5s;
+                                    animation-name: remplis;
+
+                                    @keyframes remplis {
+                                        from {
+                                            color: white;
+                                        }
+
+                                        to {
+                                            color: #9356DC;
+                                        }
+                                    }
                                 }
 
                                 .fa-regular {
                                     display: none;
                                 }
                             }
-
                         }
+
 
 
                     }
@@ -711,6 +731,7 @@
 
         a {
             text-decoration: none;
+            color: white;
         }
     }
 
@@ -767,31 +788,41 @@
                     font-weight: 500;
                 }
 
-                .fa-regular {
-                    font-size: x-large;
+                .heart {
+                    .fa-solid {
+                        display: none;
+                    }
+
+                    .fa-regular {
+                        font-size: x-large;
+                    }
 
                     &:hover {
-                        z-index: 5;
-                        cursor: pointer;
-                        animation-duration: 2s;
-                        animation-name: remplis;
+                        .fa-solid {
+                            display: block;
+                            font-size: x-large;
+                            color: #9356DC;
+                            cursor: pointer;
+                            animation-duration: 5s;
+                            animation-name: remplis;
 
-                        @keyframes remplis {
-                            0% {
-                                background-color: #9356DC;
-                            }
+                            @keyframes remplis {
+                                from {
+                                    color: white;
+                                }
 
-                            50% {
-                                background-color: #9356DC;
+                                to {
+                                    color: #9356DC;
+                                }
                             }
+                        }
 
-                            100% {
-                                background-color: #9356DC;
-                                transition: transform 1500ms ease-in-out;
-                            }
+                        .fa-regular {
+                            display: none;
                         }
                     }
                 }
+
             }
 
             .entree {
@@ -829,10 +860,6 @@
                     flex-direction: row;
                     justify-content: space-between;
                     height: 50px;
-
-                    &:hover {
-                        background-color: #99E2D0;
-                    }
 
                     .choix {
 
@@ -876,8 +903,8 @@
 
                     &:hover {
                         .choix {
-                            width: 88%;
-                            animation-duration: 1s;
+                            width: 100%;
+                            animation-duration: 3s;
                             animation-name: retract;
 
                             @keyframes retract {
@@ -886,52 +913,94 @@
                                 }
 
                                 to {
-                                    width: 88%;
+                                    width: 92%;
                                 }
                             }
                         }
 
-                        .fa-solid {
+                        .fond {
+                            background-color: #99E2D0;
+                            width: 8%;
                             display: flex;
-                            justify-content: space-around;
-                            align-items: center;
-                            font-size: x-large;
-                            color: white;
-                            border-radius: 0 15% 15% 0;
-                            height: 100%;
-                            z-index: 3;
-                            animation-duration: 2s;
-                            animation-name: valid;
+                            justify-content: center;
+                            border-radius: 0 30% 30% 0;
 
-                            @keyframes valid {
-                                0% {
-                                    margin-right: -100%;
+                            .fa-solid {
+                                width: 10%;
+                                display: flex;
+                                justify-content: space-around;
+                                align-items: center;
+                                font-size: x-large;
+                                color: white;
+                                border-radius: 0 15% 15% 0;
+                                height: 100%;
+                                z-index: 3;
+                                animation-duration: 1s;
+                                animation-name: valid;
+
+                                @keyframes valid {
+                                    0% {
+                                        margin-right: -100%;
+                                    }
+
+                                    10% {
+                                        transform: rotate(0.1turn);
+                                    }
+
+                                    20% {
+                                        transform: rotate(0.2turn);
+                                    }
+
+                                    30% {
+                                        transform: rotate(0.3turn);
+                                    }
+
+                                    40% {
+                                        transform: rotate(0.4turn);
+                                    }
+
+                                    50% {
+                                        transform: rotate(0.5turn);
+                                    }
+
+                                    60% {
+                                        transform: rotate(0.6turn);
+                                    }
+
+                                    70% {
+                                        transform: rotate(0.7turn);
+                                    }
+
+                                    80% {
+                                        transform: rotate(0.8turn);
+                                    }
+
+                                    90% {
+                                        transform: rotate(0.9turn);
+                                    }
+
+                                    100% {
+                                        margin-right: 0;
+                                        transform: rotate(1turn);
+                                        transition: transform 500ms ease-in;
+                                    }
                                 }
 
-                                70% {
-                                    transform: rotate(-0.7turn);
-                                }
-
-                                100% {
-                                    margin-right: 0;
-                                    transform: rotate(-1turn);
-                                    transition: transform 1500ms ease-in-out;
-                                }
                             }
 
-                        }
-
-                        .acc {
-                            width: 90%;
-                            text-overflow: ellipsis;
-                            overflow: hidden;
-                            white-space: nowrap;
+                            .acc {
+                                width: 90%;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
                         }
                     }
+
+
                 }
-
-
             }
+
 
             .commande {
                 border-radius: 20px;
