@@ -6,8 +6,8 @@
 
 .plats {
     @extend .entree;
-    animation-duration: 5s;
     animation-name: vew;
+        animation-delay: 2s;
 
     @keyframes vew {
         from {
@@ -23,8 +23,8 @@
 
 .desserts {
     @extend .entree;
-    animation-duration: 7s;
     animation-name: vew;
+    animation-delay: 4s;
 
     @keyframes vew {
         from {
@@ -507,12 +507,11 @@
         }
 
         .bouton {
-            border: solid grey 1px;
-            box-shadow: 0px -2px grey;
+            box-shadow: 0px -2px rgb(234, 224, 224);
+            border: 0;
             width: 100%;
             padding: 3%;
             margin-top: 5px;
-            margin-bottom: 20px;
 
             .fa-location-dot {
                 margin-right: 10px;
@@ -524,16 +523,22 @@
             justify-content: center;
             flex-direction: column;
             align-items: center;
+            background-color: rgb(247, 246, 246);
 
             .titre {
-                width: 60%;
-                font-weight: 900;
+                width: 50%;
+                font-weight: 500;
+                font-size: large;
                 margin-bottom: 10px;
+                margin-top: 20px;
+
             }
 
             p {
+                width: 60%;
                 margin-bottom: 10px;
                 text-align: center;
+
 
                 &:nth-child(even) {
                     color: gray;
@@ -550,7 +555,7 @@
                 margin-bottom: 50px;
 
                 &:hover {
-                    box-shadow: 0 6px 5px #FF79DA;
+                    box-shadow: 0 6px 5px #db55f0;
                     cursor: pointer;
                 }
             }
@@ -569,17 +574,18 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                font-weight: 500;
 
                 li {
                     display: flex;
                     align-items: center;
                     width: 80%;
-                    margin-bottom: 15px;
+                    margin-bottom: 20px;
                     padding: 3px;
                     border-radius: 10px;
                     padding: 10px;
                     box-shadow: 0 3px 8px rgb(199, 196, 196);
-                    background-color: rgb(242, 236, 236);
+                    background-color: rgb(247, 246, 246);
 
                     &:hover {
                         cursor: pointer;
@@ -662,6 +668,8 @@
                         align-items: center;
 
                         .heart {
+                            padding: 15px;
+
                             .fa-solid {
                                 display: none;
                             }
@@ -697,13 +705,13 @@
 
                     img {
                         width: 100%;
-                        height: 100px;
+                        height: 150px;
                         object-fit: cover;
 
                     }
 
                     .txt {
-                        padding: 10px;
+                        padding: 15px;
                     }
 
                     strong {
@@ -755,17 +763,17 @@
 
     main {
         $categories:
-            back1 '../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg',
+            back1 '../../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',
             back2 '../../assets/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg',
-            back3 '../../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg',
+            back3 '../../assets/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg',
             back4 '../../assets/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg';
 
         @each $category in $categories {
-            .#{nth($category, 1)} {
+            .#{nth($category,1)} {
                 background-image: url(nth($category, 2));
                 background-size: cover;
                 width: 100%;
-                height: 200px;
+                height: 250px;
                 object-fit: cover;
             }
         }
@@ -784,17 +792,21 @@
                 font-family: 'Shrikhand';
 
                 span {
-                    font-size: large;
-                    font-weight: 500;
+                    font-size: x-large;
+                    font-weight: 900;
+                    margin-left: 10px;
+                    margin-bottom: 25px;
                 }
 
                 .heart {
                     .fa-solid {
                         display: none;
+                        margin-left: -50px;
                     }
 
                     .fa-regular {
                         font-size: x-large;
+                        margin-left: -50px;
                     }
 
                     &:hover {
@@ -803,6 +815,7 @@
                             font-size: x-large;
                             color: #9356DC;
                             cursor: pointer;
+                            margin-left: -50px;
                             animation-duration: 5s;
                             animation-name: remplis;
 
@@ -819,6 +832,8 @@
 
                         .fa-regular {
                             display: none;
+                            margin-left: -50px;
+
                         }
                     }
                 }
@@ -827,7 +842,7 @@
 
             .entree {
 
-                animation-duration: 5s;
+                animation-duration: 6s;
                 animation-name: vew;
 
                 @keyframes vew {
@@ -844,7 +859,7 @@
 
                 h4 {
                     padding-top: 10px;
-                    margin-left: 15px;
+                    margin-left: 20px;
                     width: 10%;
                     border-bottom: #99E2D0 solid 3px;
                     margin-bottom: 10px;
@@ -869,17 +884,29 @@
                         width: 100%;
                         margin-left: 5px;
                         align-items: center;
+                        padding: 0 20px 0 20px;
 
                         .repas {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
+
+                            .bouffe {
+                                font-weight: 900;
+                                margin-bottom: 5px;
+                            }
+
                         }
 
-                        .bouffe {
-                            font-weight: 900;
-                            margin-bottom: 5px;
+                        &:hover {
+                            .acc {
+                                width: 80%;
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                white-space: nowrap;
+                            }
                         }
+
                     }
 
                     @for $anim from 1 through 4 {
@@ -902,26 +929,10 @@
                     }
 
                     &:hover {
-                        .choix {
-                            animation-duration: 3s;
-                            animation-name: retract;
-                            
-
-                            @keyframes retract {
-                                0% {
-                                    width: 100%;
-                                }
-
-                                100% {
-                                    width: 90%;
-                                    transition: transform 1000ms ease-in-out;
-                                }
-                            }
-                        }
 
                         .fond {
                             background-color: #99E2D0;
-                            width: 8%;
+                            width: 20%;
                             display: flex;
                             justify-content: center;
                             border-radius: 0 30% 30% 0;
@@ -988,12 +999,7 @@
 
                             }
 
-                            .acc {
-                                width: 90%;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-                                white-space: nowrap;
-                            }
+
                         }
                     }
 
@@ -1009,8 +1015,8 @@
                 padding: 10px;
                 color: white;
                 width: 60%;
-                margin: 15px 50px 50px 50px;
-
+                margin: 8% 20% 15% 20%;
+                padding: 4%;
                 &:hover {
                     box-shadow: 0 6px 5px #FF79DA;
                     cursor: pointer;
