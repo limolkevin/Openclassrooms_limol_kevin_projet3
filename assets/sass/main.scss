@@ -7,7 +7,7 @@
 .plats {
     @extend .entree;
     animation-name: vew;
-        animation-delay: 2s;
+    animation-delay: 2s;
 
     @keyframes vew {
         from {
@@ -41,10 +41,43 @@
 //deskop----------------------------------------------------------------------------------------------------------------------------------
 
 @media screen and (min-width: 768px) {
+
     body {
-        font-family: 'Roboto', sans-serif;
+        #load {
+            position: absolute;
+            background-color: black;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+
+            .loader {
+                border: 16px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 16px solid #9356DC;
+                width: 200px;
+                height: 200px;
+                animation: spin 3s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        font-family: 'Roboto',
+        sans-serif;
         font-size: small;
         width: 100%;
+        position: relative;
 
         .logo {
             margin-top: 15px;
@@ -106,8 +139,11 @@
         .liste {
 
             h2 {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 font-weight: bold;
-                font-size: large;
+                font-size: xx-large;
                 margin-left: 15px;
             }
 
@@ -133,16 +169,20 @@
                         color: #9356DC;
                     }
 
+                    &:hover {
+                        color: #9356DC;
+                        box-shadow: 0 4px 9px #9356DC;
+                        cursor: pointer;
+                    }
+
                     span {
                         background-color: #9356DC;
                         color: white;
                         margin-left: -25px;
                         margin-right: 15px;
-                        z-index: 5;
                         border-radius: 100%;
                         width: 15px;
                         padding: 5px;
-                        display: flex;
 
                     }
 
@@ -165,9 +205,11 @@
             padding: 30px 0 50px;
 
             h2 {
-                font-weight: bold;
                 display: flex;
-                font-size: large;
+                justify-content: center;
+                align-items: center;
+                font-weight: bold;
+                font-size: xx-large;
                 margin-left: 19px;
                 margin-bottom: 14px;
             }
@@ -489,9 +531,54 @@
 @media screen and (max-width: 767px) {
 
     body {
-        font-family: 'Roboto', sans-serif;
+        #load {
+            display: flex;
+            justify-content: center;
+            animation-duration: 10s;
+            animation-name: noir;
+
+            @keyframes noir {
+                from {
+                    background-color: black;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 100;
+                    position: absolute;
+                }
+
+                to {
+                }
+            }
+
+            .loader {
+                border: 16px solid #f3f3f3;
+                border-radius: 50%;
+                border-top: 16px solid #9356DC;
+                width: 150px;
+                height: 150px;
+                margin-top: 20%;
+                animation: spin 3s linear infinite;
+        
+            }
+
+            @keyframes spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                    
+                }
+            }
+
+        }
+
+        font-family: 'Roboto',
+        sans-serif;
         font-size: small;
         width: 100%;
+        position: relative;
         display: flex;
         flex-direction: column;
 
@@ -518,7 +605,7 @@
             }
         }
 
-        article {
+        .article {
             display: flex;
             justify-content: center;
             flex-direction: column;
@@ -587,13 +674,15 @@
                     box-shadow: 0 3px 8px rgb(199, 196, 196);
                     background-color: rgb(247, 246, 246);
 
-                    &:hover {
-                        cursor: pointer;
-                    }
-
                     :hover .fa-solid {
                         color: #9356DC;
 
+                    }
+
+                    &:hover {
+                        color: #9356DC;
+                        box-shadow: 0 4px 9px #9356DC;
+                        cursor: pointer;
                     }
 
                     span {
@@ -900,7 +989,7 @@
 
                         &:hover {
                             .acc {
-                                width: 80%;
+                                width: 90%;
                                 text-overflow: ellipsis;
                                 overflow: hidden;
                                 white-space: nowrap;
@@ -932,10 +1021,26 @@
 
                         .fond {
                             background-color: #99E2D0;
+                            z-index: 100;
+                            padding: 0;
+                            margin: 0;
                             width: 20%;
+                            height: 110%;
                             display: flex;
                             justify-content: center;
-                            border-radius: 0 30% 30% 0;
+                            border-radius: 0 25% 25% 0;
+                            animation-duration: 2s;
+                            animation-name: backg;
+
+                            @keyframes backg {
+                                0% {
+                                    margin-right: -20%;
+                                }
+
+                                100% {
+                                    transition: transform 2500ms ease-in;
+                                }
+                            }
 
                             .fa-solid {
                                 width: 10%;
@@ -947,7 +1052,7 @@
                                 border-radius: 0 15% 15% 0;
                                 height: 100%;
                                 z-index: 3;
-                                animation-duration: 2s;
+                                animation-duration: 3s;
                                 animation-name: valid;
 
                                 @keyframes valid {
@@ -999,11 +1104,8 @@
 
                             }
 
-
                         }
                     }
-
-
                 }
             }
 
@@ -1017,6 +1119,7 @@
                 width: 60%;
                 margin: 8% 20% 15% 20%;
                 padding: 4%;
+
                 &:hover {
                     box-shadow: 0 6px 5px #FF79DA;
                     cursor: pointer;

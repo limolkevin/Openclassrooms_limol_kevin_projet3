@@ -81,6 +81,33 @@ table {
     font-family: "Roboto", sans-serif;
     font-size: small;
     width: 100%;
+    position: relative;
+  }
+  body #load {
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  body #load .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #9356DC;
+    width: 200px;
+    height: 200px;
+    animation: spin 3s linear infinite;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
   body .logo {
     margin-top: 15px;
@@ -131,8 +158,11 @@ table {
     margin-bottom: 50px;
   }
   body .liste h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: bold;
-    font-size: large;
+    font-size: xx-large;
     margin-left: 15px;
   }
   body .liste ul {
@@ -156,16 +186,19 @@ table {
   body .liste ul li :hover .fa-solid {
     color: #9356DC;
   }
+  body .liste ul li:hover {
+    color: #9356DC;
+    box-shadow: 0 4px 9px #9356DC;
+    cursor: pointer;
+  }
   body .liste ul li span {
     background-color: #9356DC;
     color: white;
     margin-left: -25px;
     margin-right: 15px;
-    z-index: 5;
     border-radius: 100%;
     width: 15px;
     padding: 5px;
-    display: flex;
   }
   body .liste ul li .fa-solid {
     font-size: medium;
@@ -177,9 +210,11 @@ table {
     padding: 30px 0 50px;
   }
   body .restaurants h2 {
-    font-weight: bold;
     display: flex;
-    font-size: large;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: xx-large;
     margin-left: 19px;
     margin-bottom: 14px;
   }
@@ -443,8 +478,41 @@ table {
     font-family: "Roboto", sans-serif;
     font-size: small;
     width: 100%;
+    position: relative;
     display: flex;
     flex-direction: column;
+  }
+  body #load {
+    display: flex;
+    justify-content: center;
+    animation-duration: 10s;
+    animation-name: noir;
+  }
+  @keyframes noir {
+    from {
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      position: absolute;
+    }
+  }
+  body #load .loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #9356DC;
+    width: 150px;
+    height: 150px;
+    margin-top: 20%;
+    animation: spin 3s linear infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
   body .logo {
     margin-top: 15px;
@@ -465,29 +533,29 @@ table {
   body .bouton .fa-location-dot {
     margin-right: 10px;
   }
-  body article {
+  body .article {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: rgb(247, 246, 246);
   }
-  body article .titre {
+  body .article .titre {
     width: 50%;
     font-weight: 500;
     font-size: large;
     margin-bottom: 10px;
     margin-top: 20px;
   }
-  body article p {
+  body .article p {
     width: 60%;
     margin-bottom: 10px;
     text-align: center;
   }
-  body article p:nth-child(even) {
+  body .article p:nth-child(even) {
     color: gray;
   }
-  body article .explorer {
+  body .article .explorer {
     border-radius: 20px;
     background: linear-gradient(#FF79DA, #9356DC);
     border: 0;
@@ -496,7 +564,7 @@ table {
     margin-top: 10px;
     margin-bottom: 50px;
   }
-  body article .explorer:hover {
+  body .article .explorer:hover {
     box-shadow: 0 6px 5px #db55f0;
     cursor: pointer;
   }
@@ -523,11 +591,13 @@ table {
     box-shadow: 0 3px 8px rgb(199, 196, 196);
     background-color: rgb(247, 246, 246);
   }
-  body .liste ul li:hover {
-    cursor: pointer;
-  }
   body .liste ul li :hover .fa-solid {
     color: #9356DC;
+  }
+  body .liste ul li:hover {
+    color: #9356DC;
+    box-shadow: 0 4px 9px #9356DC;
+    cursor: pointer;
   }
   body .liste ul li span {
     background-color: #9356DC;
@@ -777,7 +847,7 @@ table {
     margin-bottom: 5px;
   }
   main .carte .entree p .choix:hover .acc, main .carte .plats p .choix:hover .acc, main .carte .desserts p .choix:hover .acc {
-    width: 80%;
+    width: 90%;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
@@ -803,10 +873,24 @@ table {
   }
   main .carte .entree p:hover .fond, main .carte .plats p:hover .fond, main .carte .desserts p:hover .fond {
     background-color: #99E2D0;
+    z-index: 100;
+    padding: 0;
+    margin: 0;
     width: 20%;
+    height: 110%;
     display: flex;
     justify-content: center;
-    border-radius: 0 30% 30% 0;
+    border-radius: 0 25% 25% 0;
+    animation-duration: 2s;
+    animation-name: backg;
+  }
+  @keyframes backg {
+    0% {
+      margin-right: -20%;
+    }
+    100% {
+      transition: transform 2500ms ease-in;
+    }
   }
   main .carte .entree p:hover .fond .fa-solid, main .carte .plats p:hover .fond .fa-solid, main .carte .desserts p:hover .fond .fa-solid {
     width: 10%;
@@ -818,7 +902,7 @@ table {
     border-radius: 0 15% 15% 0;
     height: 100%;
     z-index: 3;
-    animation-duration: 2s;
+    animation-duration: 3s;
     animation-name: valid;
   }
   @keyframes valid {
